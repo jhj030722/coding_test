@@ -54,7 +54,8 @@ print(A*int(B))
 
 > 알게된 점
 
-![ia](../IMG/백준1.png)
+
+![ARHQB](../IMG/백준1.png) 
 
 
 세 자리 수의 곱셈 A * B를 하려면 
