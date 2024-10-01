@@ -172,7 +172,7 @@ def solution(k, score):
 N = int(input()) # 배열에 추가하려는 정수의 개수 N
 nums = list(map(int,input().split())) #A1부터 AN까지 N개의 정수가 공백으로 주어짐.
 
-result = [0] #첫번째값은 무조건 0이므로 0으로 시작하기
+result = '0' #첫번째값은 무조건 0이므로 0으로 시작하기
 min_value = nums[0] #최솟값은 첫번째 값으로 초기화
 max_distance = 0 #처음에는 [2] 이런식으로 숫자 하나니까 distance도 무조건 0으로 시작 
 
@@ -216,3 +216,29 @@ solve()
 ```
 
 두 개 다 틀렸는데 왜 틀렸는지 모르겠다... 눈물...
+
+
+```py
+def solve():
+    N = int(input()) 
+    nums = list(map(int,input().split())) 
+
+    result = '0'
+    min_value = nums[0] 
+    max_distance = 0 
+
+    for i in range(1, N):
+        if nums[i] < min_value:
+            min_value = nums[i]
+        if nums[i]-min_value > max_distance:
+            max_distance = nums[i] - min_value
+        result += f' {max_distance}'
+    print(result)
+solve()
+```
+
+이렇게 쓰니까 정답이라고 나왔다. 
+- solve()를 한 줄 띄우니까
+`출력 초과` 메세지가 떠서 붙였음. 
+- 그리고 solve()라는 함수를 정의했음. 
+- result는 문자열 '0'으로 선언함. => 그래야 나중에 `f' {max_distance}`에서 공백으로 이어붙일 수 있음. 
