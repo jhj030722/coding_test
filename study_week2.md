@@ -171,9 +171,11 @@ def solution(k, score):
 ```py
 N = int(input()) # 배열에 추가하려는 정수의 개수 N
 nums = list(map(int,input().split())) #A1부터 AN까지 N개의 정수가 공백으로 주어짐.
-result = '0'
-min_value = nums[0] 
+
+result = [0] #첫번째값은 무조건 0이므로 0으로 시작하기
+min_value = nums[0] #최솟값은 첫번째 값으로 초기화
 max_distance = 0 #처음에는 [2] 이런식으로 숫자 하나니까 distance도 무조건 0으로 시작 
+
 for i in range(1, N):
     if nums[i] < min_value:
         min_value = nums[i]
@@ -181,3 +183,36 @@ for i in range(1, N):
         max_distance = nums[i] - min_value
     result += f' {max_distance}'
 print(result)
+```
+
+
+```
+def solve():
+    N = int(input())  # 배열에 추가하려는 정수의 개수 N
+    nums = list(map(int, input().split()))  # A1부터 AN까지 N개의 정수가 공백으로 주어짐.
+
+    result = []  # 결과를 저장할 리스트
+    min_value = nums[0]  # 최소값은 첫 번째 값으로 초기화
+    max_value = nums[0]  # 최대값도 첫 번째 값으로 초기화
+
+    # 첫 번째 값은 차이가 0이므로 바로 추가
+    result.append(0)
+
+    for i in range(1, N):
+        # 최소값, 최대값 갱신
+        if nums[i] < min_value:
+            min_value = nums[i]
+        if nums[i] > max_value:
+            max_value = nums[i]
+        
+        # 최대값과 최소값의 차이를 계산하고 결과에 추가
+        result.append(max_value - min_value)
+
+    # 결과를 공백으로 구분하여 출력
+    print(' '.join(map(str, result)))
+
+# 실행
+solve()
+```
+
+두 개 다 틀렸는데 왜 틀렸는지 모르겠다... 눈물...
