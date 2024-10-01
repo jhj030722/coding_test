@@ -186,7 +186,7 @@ print(result)
 ```
 
 
-```
+```py
 def solve():
     N = int(input())  # 배열에 추가하려는 정수의 개수 N
     nums = list(map(int, input().split()))  # A1부터 AN까지 N개의 정수가 공백으로 주어짐.
